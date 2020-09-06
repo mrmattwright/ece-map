@@ -110,12 +110,12 @@ export default () => {
       <ReactMapGL
         {...viewport}
         width="100%"
-        height="380px"
+        height="680px"
         onViewportChange={setViewport}
         onClick={clickHandler}
         onHover={hoverHandler}
         getCursor={getCursor}
-        mapStyle="mapbox://styles/nzherald/ckbvt9no60gvk1ipone676rf6"
+
         mapboxApiAccessToken={MAPBOX_TOKEN}
       >
         <Source
@@ -130,6 +130,7 @@ export default () => {
           <Layer {...unclusteredPointLayer(layer, +selected || -1, hover)} />
         </Source>
       </ReactMapGL>
+      <div>{MAPBOX_TOKEN}</div>
       <Nav go={flyToViewport} />
     </>
   );
